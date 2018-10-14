@@ -10,8 +10,8 @@ mod = 2147483647
 sum = 0
 
 for i in range(40000000):
-    a = a * af**i % mod
-    b = b * bf**i % mod
+    a = a * af % mod
+    b = b * bf % mod
     if a % 2**16 == b % 2**16:
         sum += 1
 
