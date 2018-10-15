@@ -36,6 +36,8 @@ dictionary = {}
 for c in 'abcdefgh':
     dictionary[c] = 0
 
+dictionary['a'] = 1
+
 lines = s.splitlines()
 mul = 0
 line = 0
