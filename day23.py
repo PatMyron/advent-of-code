@@ -36,14 +36,14 @@ dictionary = {}
 for c in 'abcdefgh':
     dictionary[c] = 0
 
-lines = iter(s.splitlines())
-
+lines = s.splitlines()
 mul = 0
+line = 0
 
-for line in lines:
-    command = line.split()[0]
-    x = line.split()[1]
-    y = line.split()[2]
+while line < len(lines):
+    command = lines[line].split()[0]
+    x = lines[line].split()[1]
+    y = lines[line].split()[2]
     if y.isalpha():
         y = dictionary[y]
     else:
@@ -61,10 +61,7 @@ for line in lines:
         else:
             x = int(x)
         if x != 0:
-            for i in range(y - 1):  # TODO negative jump
-                try:
-                    next(lines)
-                except StopIteration:
-                    pass
+            line += y - 1
+    line += 1
 
 print(mul)
