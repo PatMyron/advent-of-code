@@ -1002,10 +1002,6 @@ oiuroieurpyejuvm'''
 
 total = 0
 for line in input5.splitlines():
-    if any(s in line for s in ['ab', 'cd', 'pq', 'xy']):
-        continue
-    if sum([line.count(x) for x in "aeiou"]) < 3:
-        continue
-    if re.search(r'(\w)\1', line):
+    if re.search(r'(\w)(\w).*\1\2', line) and re.search(r'(\w)\w\1', line):
         total += 1
 print(total)
