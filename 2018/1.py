@@ -989,3 +989,13 @@ input1 = '''+16
 -124478'''
 
 print(sum(map(int, input1.splitlines())))
+
+seen = set()
+current = 0
+while True:
+    for line in map(int, input1.splitlines()):
+        seen.add(current)
+        current += line
+        if current in seen:
+            print(current)
+            exit()
