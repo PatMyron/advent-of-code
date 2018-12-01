@@ -1001,10 +1001,13 @@ input2 = '''29x13x26
 14x3x5
 10x9x8'''
 
-total = 0
+totalPaper = 0
+totalRibbon = 0
 for line in input2.splitlines():
     numbers = list(map(int, line.split('x')))
     product = numpy.prod(numbers)
+    totalRibbon += product + 2 * sum(sorted(numbers)[:2])
     numbers = [product // x for x in numbers]
-    total += min(numbers) + 2 * sum(numbers)
-print(total)
+    totalPaper += min(numbers) + 2 * sum(numbers)
+print(totalPaper)
+print(totalRibbon)
