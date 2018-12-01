@@ -309,11 +309,11 @@ for line in s.splitlines():
     for x in range(start[0], end[0] + 1):
         for y in range(start[1], end[1] + 1):
             if "toggle" in line:
-                matrix[x][y] = int(not matrix[x][y])
+                matrix[x][y] += 2
             if "off" in line:
-                matrix[x][y] = 0
+                matrix[x][y] = max(matrix[x][y] - 1, 0)
             if "on" in line:
-                matrix[x][y] = 1
+                matrix[x][y] += 1
 
 total = 0
 for i in range(1000):
