@@ -1404,9 +1404,9 @@ s = '''#1 @ 669,271: 17x11
 matrix = defaultdict(lambda: defaultdict(lambda: 0))
 
 for line in s.splitlines():
-    numbers = list(map(int, re.split('[,x:]', line.split('@ ')[1])))
-    for x in range(numbers[0], numbers[0] + numbers[2]):
-        for y in range(numbers[1], numbers[1] + numbers[3]):
+    numbers = list(map(int, re.split('[,x:@]', line.split('#')[1])))
+    for x in range(numbers[1], numbers[1] + numbers[3]):
+        for y in range(numbers[2], numbers[2] + numbers[4]):
             matrix[x][y] += 1
 
 total = 0
