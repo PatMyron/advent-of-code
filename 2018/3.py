@@ -1415,3 +1415,13 @@ for i in range(1000):
         if matrix[i][j] > 1:
             total += 1
 print(total)
+
+for line in s.splitlines():
+    numbers = list(map(int, re.split('[,x:@]', line.split('#')[1])))
+    covered = False
+    for x in range(numbers[1], numbers[1] + numbers[3]):
+        for y in range(numbers[2], numbers[2] + numbers[4]):
+            if matrix[x][y] > 1:
+                covered = True
+    if not covered:
+        print(numbers[0])
