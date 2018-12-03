@@ -1,3 +1,4 @@
+import Levenshtein
 s = '''auxwcbzrmdvpsjfgkrthnkioqm
 auxwcbzrmdvpsjfgbltonyijqe
 auxwcbzrmdfpsefgklthnoioqe
@@ -262,5 +263,8 @@ for line in s.splitlines():
             threes = True
     two += int(twos)
     three += int(threes)
+    for otherLine in s.splitlines():
+        if Levenshtein.distance(line, otherLine) == 1:
+            print(line)
 
 print(two * three)
