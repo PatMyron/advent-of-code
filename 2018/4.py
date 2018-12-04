@@ -1020,3 +1020,9 @@ for line in s.splitlines():
     else:
         guards[day] = other
 
+maxTimeAsleep = 0
+for guard in set(guards.values()):
+    timeAsleep = 0
+    if timeAsleep > maxTimeAsleep:
+        maxTimeAsleep = timeAsleep
+        maxGuard = guard
