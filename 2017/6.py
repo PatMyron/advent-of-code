@@ -1,4 +1,11 @@
-s = '10	3	15	10	5	15	5	15	9	2	5	8	5	2	3	6'
+import os
+import requests
+import requests_cache
+
+requests_cache.install_cache('../cache')
+url = 'https://adventofcode.com/' + os.path.abspath(__file__).split('/')[-2] + '/day/' + __file__.split('.')[0] + '/input'
+s = requests.get(url, cookies={"session": os.environ['SESSION']}).text
+
 l = list(map(int, s.split()))
 
 

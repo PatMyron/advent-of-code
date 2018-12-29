@@ -1,12 +1,18 @@
 import math
 import numpy as np
+import os
+import requests
+import requests_cache
+
+requests_cache.install_cache('../cache')
+url = 'https://adventofcode.com/' + os.path.abspath(__file__).split('/')[-2] + '/day/' + __file__.split('.')[0] + '/input'
+n = int(requests.get(url, cookies={"session": os.environ['SESSION']}).text)
 
 
 def round_down_to_odd(f):
     return np.ceil(f) // 2 * 2 - 1
 
 
-n = 289326
 squareRootOfPreviousCorner = round_down_to_odd(math.sqrt(n))
 numbersInFourthOfCurrentSpiral = squareRootOfPreviousCorner + 1
 previousCornerNum = squareRootOfPreviousCorner ** 2
