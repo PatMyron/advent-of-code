@@ -1,2 +1,2 @@
 language: python
-script: cd 2015 && python 1.py
+script: cd 2015 && pwd && ls ?.py | xargs -n 1 time python3 && cd ../2016 && pwd && ls * | xargs -n 1 time python3 && cd ../2017 && pwd && ls * | xargs -n 1 time python3 && cd ../2018 && pwd && ls [^7].py | xargs -n 1 time python3
