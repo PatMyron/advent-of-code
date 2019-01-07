@@ -1,0 +1,2 @@
+language: python
+script: cd 2015 && python 1.py
