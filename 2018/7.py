@@ -12,7 +12,7 @@ prereqs = defaultdict(list)
 
 for line in s.splitlines():
     prereqs[line.split()[7]].append(line.split()[1])
-while True:
+while not all(array == ['DONE'] for array in prereqs.values()):
     for letter in string.ascii_uppercase:
         if not prereqs[letter]:
             print(letter, end='')

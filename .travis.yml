@@ -1,4 +1,4 @@
 language: python
 python:
   - "3.6"
-script: for d in 2015 2016 2017; do (cd $d; pwd; ls * | grep -v 23 | xargs -n 1 time python;); done; cd 2018; pwd; ls [^57].py | xargs -n 1 time python
+script: for d in 2*; do (cd $d; pwd; ls * | grep -v 23 | xargs -n 1 time python;); done;
