@@ -1,4 +1,4 @@
 language: python
 python:
   - "3.6"
-script: ulimit -s 40000; ulimit -a; for d in 2*; do (cd $d; pwd; ls * | travis_wait 120 xargs -n 1 time python;); done;
+script: ulimit -s 40000; ulimit -a; for d in 2*; do (cd $d; pwd; travis_wait 120 ls * | xargs -n 1 time python;); done;
