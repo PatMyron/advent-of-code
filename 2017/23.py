@@ -11,7 +11,8 @@ dictionary = {}
 for c in 'abcdefgh':
     dictionary[c] = 0
 
-dictionary['a'] = 1
+# part 2
+# dictionary['a'] = 1
 
 lines = s.splitlines()
 mul = 0
