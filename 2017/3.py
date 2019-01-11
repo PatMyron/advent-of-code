@@ -6,7 +6,7 @@ import requests_cache
 
 requests_cache.install_cache('../cache')
 url = 'https://adventofcode.com/' + os.path.abspath(__file__).split('/')[-2] + '/day/' + __file__.split('.')[0] + '/input'
-n = int(requests.get(url, cookies={"session": os.environ['SESSION']}).text)
+n = int(requests.get(url, cookies={"session": os.environ['SESSION']}).text.strip())
 
 
 def round_down_to_odd(f):
