@@ -2,6 +2,7 @@ import sys
 import os
 import requests
 import requests_cache
+import multiprocessing
 
 requests_cache.install_cache('../cache')
 url = 'https://adventofcode.com/' + os.path.abspath(__file__).split('/')[-2] + '/day/' + __file__.split('.')[0] + '/input'
@@ -20,7 +21,9 @@ def recursion(s):
 
 print(len(recursion(input5)))
 
-minimum = sys.maxsize
-for char in range(ord('a'), ord('z') + 1):
-    minimum = min(minimum, len(recursion(input5.replace(chr(char), '').replace(chr(char).upper(), ''))))
-print(minimum)
+
+def removingLetter(char):
+    return len(recursion(input5.replace(chr(char), '').replace(chr(char).upper(), '')))
+
+
+print(min(multiprocessing.Pool().map(removingLetter, range(ord('a'), ord('z') + 1))))
