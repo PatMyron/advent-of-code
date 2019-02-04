@@ -11,19 +11,21 @@ input5 = requests.get(url, cookies={"session": os.environ['SESSION']}).text.stri
 sys.setrecursionlimit(40000)  # sorry
 
 
-def recursion(s):
+def recursion(s, lowered):
     for i in range(len(s) - 1):
-        if s[i] != s[i+1] and s[i].lower() == s[i+1].lower():
+        if s[i] != s[i+1] and lowered[i] == lowered[i+1]:
             s = s[:i] + s[i + 2:]
-            return recursion(s)
+            lowered = lowered[:i] + lowered[i + 2:]
+            return recursion(s, lowered)
     return s
 
 
-print(len(recursion(input5)))
+print(len(recursion(input5, input5.lower())))
 
 
 def removingLetter(char):
-    return len(recursion(input5.replace(chr(char), '').replace(chr(char).upper(), '')))
+    iteration = input5.replace(chr(char), '').replace(chr(char).upper(), '')
+    return len(recursion(iteration, iteration.lower()))
 
 
 print(min(multiprocessing.Pool().map(removingLetter, range(ord('a'), ord('z') + 1))))
