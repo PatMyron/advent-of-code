@@ -25,7 +25,6 @@ print(len(recursion(input5, input5.lower())))
 
 def removingLetter(char):
     iteration = input5.replace(chr(char), '').replace(chr(char).upper(), '')
-    print('.', end='')
     return len(recursion(iteration, iteration.lower()))
 
 
