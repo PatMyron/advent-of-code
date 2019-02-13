@@ -20,11 +20,12 @@ def recursion(s, lowered):
     return s
 
 
-print(len(recursion(input5, input5.lower())))
+part1 = recursion(input5, input5.lower())
+print(len(part1))
 
 
 def removingLetter(char):
-    iteration = input5.replace(chr(char), '').replace(chr(char).upper(), '')
+    iteration = part1.replace(chr(char), '').replace(chr(char).upper(), '')
     return len(recursion(iteration, iteration.lower()))
 
 
