@@ -18,7 +18,7 @@ action "pylint" {
 
 action "Flake8" {
   uses = "cclauss/GitHub-Action-for-Flake8@master"
-  args = "flake8 . --max-line-length=88"
+  args = "flake8 . --max-line-length=140"
 }
 
 action "black" {
