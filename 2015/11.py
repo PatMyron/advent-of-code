@@ -25,4 +25,3 @@ while True:
     s = list(s)
     incrementByRecursion(s, -1)
     s = ''.join(s)
-
