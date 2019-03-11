@@ -1,10 +1,10 @@
 workflow "New workflow" {
   on = "push"
-  resolves = ["pylint", "pyflakes", "black", "Flake8", "Python Syntax Checker"]
+  resolves = ["pylint", "pyflakes", "black", "Flake8"]
 }
 
 action "Python Syntax Checker" {
-  uses = "cclauss/Find-Python-syntax-errors-action@0.1.2"
+  uses = "cclauss/Find-Python-syntax-errors-action@master"
 }
 
 action "pyflakes" {
