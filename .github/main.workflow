@@ -24,4 +24,5 @@ action "Flake8" {
 action "black" {
   uses = "lgeiger/black-action@master"
   args = ". --check"
+  needs = ["pylint", "pyflakes", "Flake8"]
 }
