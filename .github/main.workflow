@@ -13,7 +13,7 @@ action "pyflakes" {
 
 action "pylint" {
   uses = "cclauss/GitHub-Action-for-pylint@master"
-  args = "pylint"
+  args = "pylint 2*"
 }
 
 action "Flake8" {
