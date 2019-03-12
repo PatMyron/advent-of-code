@@ -3,5 +3,5 @@ language: python
 python: 3.7
 before_install: pip install --upgrade pip
 install: pip install pylint -r requirements.txt
-before_script: pylint .
+before_script: pylint 2*
 script: ulimit -s 40000; ulimit -a; for d in 2*; do (cd $d; pwd; ls * | xargs -n 1 time python); done;
