@@ -2,6 +2,6 @@ dist: xenial
 language: python
 python: 3.7
 before_install: pip install --upgrade pip
-install: pip install numpy pylint python-dateutil python-Levenshtein requests requests_cache
-before_script: pylint
+install: pip install -r requirements.txt
+before_script: pylint .
 script: ulimit -s 40000; ulimit -a; for d in 2*; do (cd $d; pwd; ls * | xargs -n 1 time python); done;
