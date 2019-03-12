@@ -10,7 +10,7 @@ s = requests.get(url, cookies={"session": os.environ['SESSION']}).text.strip()
 def goodPass(line):
     for i in range(len(line.split())):
         word = line.split()[i]
-        for other in line.split()[i + 1 :]:
+        for other in line.split()[i + 1:]:
             if sorted(word) == sorted(other):
                 return False
     return True

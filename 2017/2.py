@@ -15,7 +15,7 @@ for line in s.splitlines():
     splitLine = list(map(int, line.split()))
     for i in range(len(splitLine)):
         num = splitLine[i]
-        for other in splitLine[i + 1 :]:
+        for other in splitLine[i + 1:]:
             if num % other == 0:
                 sum += num / other
             if other % num == 0:
