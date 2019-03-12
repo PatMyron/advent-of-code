@@ -18,10 +18,10 @@ numbersInFourthOfCurrentSpiral = squareRootOfPreviousCorner + 1
 previousCornerNum = squareRootOfPreviousCorner ** 2
 remainder = n - previousCornerNum
 remainderModded = remainder % numbersInFourthOfCurrentSpiral
-answer = numbersInFourthOfCurrentSpiral - 1   # start @ startingNumberInSequence
+answer = numbersInFourthOfCurrentSpiral - 1  # start @ startingNumberInSequence
 
 for i in range(1, int(remainderModded)):
-    if i >= numbersInFourthOfCurrentSpiral//2:
+    if i >= numbersInFourthOfCurrentSpiral // 2:
         answer += 1
     else:
         answer -= 1

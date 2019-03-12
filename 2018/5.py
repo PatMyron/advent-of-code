@@ -13,9 +13,9 @@ sys.setrecursionlimit(40000)  # sorry
 
 def recursion(s, lowered):
     for i in range(len(s) - 1):
-        if s[i] != s[i+1] and lowered[i] == lowered[i+1]:
-            s = s[:i] + s[i + 2:]
-            lowered = lowered[:i] + lowered[i + 2:]
+        if s[i] != s[i + 1] and lowered[i] == lowered[i + 1]:
+            s = s[:i] + s[i + 2 :]
+            lowered = lowered[:i] + lowered[i + 2 :]
             return recursion(s, lowered)
     return s
 

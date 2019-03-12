@@ -8,4 +8,4 @@ url = 'https://adventofcode.com/' + os.path.abspath(__file__).split('/')[-2] + '
 s = requests.get(url, cookies={"session": os.environ['SESSION']}).text.strip()
 
 for line in s.splitlines():
-    len(repr(line))-len(line)+len(re.findall(r'\\', repr(line)))
+    len(repr(line)) - len(line) + len(re.findall(r'\\', repr(line)))
