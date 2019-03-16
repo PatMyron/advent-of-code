@@ -1,4 +1,5 @@
 dist: xenial
 language: python
 python: 3.7
+env: SESSION=-1
 script: ulimit -s 40000; ulimit -a; for d in 2*; do (cd $d; pwd; ls * | xargs -n 1 time python); done;
