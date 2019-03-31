@@ -4,13 +4,13 @@ import requests_cache
 
 requests_cache.install_cache('../cache')
 url = 'https://adventofcode.com/' + os.path.abspath(__file__).split('/')[-2] + '/day/' + __file__.split('.')[0] + '/input'
-input3 = requests.get(url, cookies={"session": os.environ['SESSION']}).text.strip()
+s = requests.get(url, cookies={"session": os.environ['SESSION']}).text.strip()
 
 visited = set()
 x = [0, 0]
 y = [0, 0]
 i = 0
-for move in input3:
+for move in s:
     visited.add("0,0")
     if move == '>':
         x[i] += 1
