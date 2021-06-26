@@ -1,4 +1,4 @@
-import numpy
+import math
 import os
 import requests
 import requests_cache
@@ -11,7 +11,7 @@ totalPaper = 0
 totalRibbon = 0
 for line in s.splitlines():
     numbers = list(map(int, line.split('x')))
-    product = numpy.prod(numbers)
+    product = math.prod(numbers)
     totalRibbon += product + 2 * sum(sorted(numbers)[:2])
     numbers = [product // x for x in numbers]
     totalPaper += min(numbers) + 2 * sum(numbers)

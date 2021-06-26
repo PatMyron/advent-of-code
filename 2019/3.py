@@ -25,4 +25,4 @@ def allPositions(line):
 
 
 intersection = allPositions(s.splitlines()[0]).intersection(allPositions(s.splitlines()[1]))
-print(min(map(lambda x: abs(int(x.split(',')[0])) + abs(int(x.split(',')[1])), intersection)))
+# print(min(map(lambda x: abs(int(x.split(',')[0])) + abs(int(x.split(',')[1])), intersection)))
