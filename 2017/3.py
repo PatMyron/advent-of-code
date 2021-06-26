@@ -1,5 +1,4 @@
 import math
-import numpy as np
 import os
 import requests
 import requests_cache
@@ -10,7 +9,7 @@ n = int(requests.get(url, cookies={"session": os.environ['SESSION']}).text.strip
 
 
 def round_down_to_odd(f):
-    return np.ceil(f) // 2 * 2 - 1
+    return math.ceil(f) // 2 * 2 - 1
 
 
 squareRootOfPreviousCorner = round_down_to_odd(math.sqrt(n))
