@@ -4,7 +4,7 @@ import requests_cache
 import sys
 
 requests_cache.install_cache('../cache')
-url = 'https://adventofcode.com/2019/day/2/input'
+url = 'https://adventofcode.com/' + os.path.abspath(__file__).split('/')[-2] + '/day/' + __file__.split('.')[0] + '/input'
 s = requests.get(url, cookies={"session": os.environ['SESSION']}).text.strip()
 
 for noun in range(100):
