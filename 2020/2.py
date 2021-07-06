@@ -10,6 +10,6 @@ total = 0
 for line in s.splitlines():
     num = line.split()[0].split('-')
     letter = line.split()[1].split(':')[0]
-    if int(num[0]) <= line.split()[2].count(letter) <= int(num[1]):
+    if (line.split()[2][int(num[0]) - 1] == letter) ^ (line.split()[2][int(num[1]) - 1] == letter):
         total += 1
 print(total)
