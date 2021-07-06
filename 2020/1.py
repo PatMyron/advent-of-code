@@ -8,6 +8,7 @@ s = requests.get(url, cookies={"session": os.environ['SESSION']}).text.strip()
 
 for i in map(int, s.splitlines()):
     for j in map(int, s.splitlines()):
-        if i + j == 2020:
-            print(i * j)
-            exit()
+        for k in map(int, s.splitlines()):
+            if i + j + k == 2020:
+                print(i * j * k)
+                exit()
