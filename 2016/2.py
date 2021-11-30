@@ -20,6 +20,7 @@ map = {
 }
 for line in s.splitlines():
     for c in line:
+        prev = position.copy()
         if c == 'U':
             position[1] += 1
         if c == 'D':
@@ -28,6 +29,6 @@ for line in s.splitlines():
             position[0] -= 1
         if c == 'R':
             position[0] += 1
-        position[0] = sorted((-1, position[0], 1))[1]  # clamp
-        position[1] = sorted((-1, position[1], 1))[1]  # clamp
+        if tuple(position) not in map:
+            position = prev.copy()
     print(map[tuple(position)], end='')
