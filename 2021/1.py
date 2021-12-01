@@ -8,9 +8,9 @@ url = 'https://adventofcode.com/' + os.path.abspath(__file__).split('/')[-2] + '
 s = requests.get(url, cookies={"session": os.environ['SESSION']}).text.strip()
 
 count = 0
-prev = sys.maxsize
-for line in map(int, s.splitlines()):
-    if line > prev:
+for i in range(len(s.splitlines())):
+    if i < 3:
+        continue
+    elif list(map(int, s.splitlines()))[i] > list(map(int, s.splitlines()))[i-3]:
         count += 1
-    prev = line
 print(count)
