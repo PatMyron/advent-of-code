@@ -3,9 +3,10 @@ import sys
 import os
 import requests
 import requests_cache
+from pathlib import Path
 
 requests_cache.install_cache('../cache')
-url = 'https://adventofcode.com/' + os.path.abspath(__file__).split('/')[-2] + '/day/' + __file__.split('.')[0] + '/input'
+url = 'https://adventofcode.com/' + Path(__file__).parent.name + '/day/' + Path(__file__).stem + '/input'
 input5 = requests.get(url, cookies={"session": os.environ['SESSION']}).text.strip()
 
 sys.setrecursionlimit(40000)  # sorry
