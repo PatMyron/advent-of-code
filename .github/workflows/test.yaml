@@ -1,0 +1,14 @@
+on:
+  push:
+  workflow_dispatch: # Enables on-demand/manual triggering
+jobs:
+  job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+      - run: |
+          pip install -q -r requirements.txt
+          for d in 2*; do (cd $d; pwd; ls * | xargs -n 1 time python); done;
+        env:
+          SESSION: ${{ secrets.SESSION }}
